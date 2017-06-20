@@ -1,0 +1,13 @@
+#cuerpoDiv div {
+  float:left;
+  width:33%;
+}
+
+#pelisAgregadasTbl {
+  width:100%;
+}
+
+#pelisAgregadasTbl th{
+  color: blue;
+  width:100%;
+}
