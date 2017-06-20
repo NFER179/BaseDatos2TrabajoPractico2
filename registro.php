@@ -1,16 +1,15 @@
 <html>
   <?php
     include 'phpFunctions/DBManage.php';
+    include 'phpFunctions/registroFunc.php';
   ?>
   <head>
     <link rel="stylesheet" type="text/css" href="css/estilos.css"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+<!--    <script type="text/javascript" src="js/functions.js"></script> -->
     
   </head>
   <body>
     <?php
-    $name = $apellido = "";
-    $nameErr = $apellidoErr = "";
     $_registrar = TRUE;
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -20,50 +19,48 @@
       $_clave = $_POST["pass"];
       $_repClave = $_POST["repPass"];
 
-      if (empty($_nombre)) {
-        $nameErr = "Campo Obligatorio.";
-        $_registrar = FALSE;
-      } else { 
-      }
-      if (empty($_apellido)){
-        $apellidoErr = "Campo obligatorio.";
-        $_registrar = FALSE;
-      } else {
-      }
-
-      if(!$_registrar){
-        echo "<h2>regstrar</h2>";
-      }
-
-      if ($_clave != $_repClave | !$_registrar) {
-
-      }
-      else{
-        RegistrarPersona($_nombre, $_apellido, $_usuario, $_clave);
+      if (empty($_nombre) | empty($_apellido) | empty($_usuario) | empty($_clave) | empty($_repClave)) {
+      } 
+      else { 
+        if (ExisteUsuario($_usuario)) {
+          $_Error = "El usuario que esta intentando ingresar ya existe.";
+        }
+        else {
+          if ($_clave != $_repClave) {
+            $_Error = "Las claves no coinciden.";
+          }
+          else{
+            RegistrarPersona($_nombre, $_apellido, $_usuario, $_clave);
+            
+            header('Location: main.php?usuario='. $_usuario);
+            
+          }
+        }
       }
     }
     ?>
     <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">
       <label>* Nombres: </label>
       <input type="text" id="nombreInp" name="name">
-      <span class="error"><?php echo $nameErr; ?></span>
+      <span class="error"></span>
       <br>
       <label>* Apellido: </label>
       <input type="text" id="apellidoInp" name="apellido">
-      <span class="error"><?php echo $apellidoErr; ?></span>
+      <span class="error"></span>
       <br>
       <label>* Usuario: </label>
       <input type="text" id="usuaroInp" name="usuario">
-      <span class="error"><?php echo $usuarioErr ?></span>
+      <span class="error"></span>
       <br>
       <label>* Password: </label>
       <input type="password" class="DefaultTextField" id="passInp" name="pass">
-      <span class="error"><?php echo $passErr; ?></span>
+      <span class="error"></span>
       <br>
       <label>* Repita Password: </label>
       <input type="password" class="DefaultTextField" id="repPassInp" name="repPass" onblur="ControlPassword()">
-      <span class="error"><?php echo $repPassErr; ?></span>
+      <span class="error"></span>
       <br>
+      <span><?php echo $_Error;?></span>
       <input type="submit" value="Registrar">
       <input type="button" value="Cancelar" onclick="GoBack()">
     </form>
