@@ -1,0 +1,15 @@
+input[type=text]:focus{
+ hover: blue;
+}
+
+.DefaultTextField{
+ border-color: gray;
+}
+
+.CorrectTextField{
+ border-color: green;
+}
+
+.ErrorTextField{
+ border-color: red;
+}
