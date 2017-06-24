@@ -18,50 +18,70 @@
   </head>
   <body>
     <div id="principalDiv">
-      <div id="cabecera">
-        <?php
-          $_nombreCompleto = ObtenerNombre($_GET["usuario"]);
-        ?>
-        <form action="CambioContrase&#241a.php" method="post">
-          <t><?php echo $_nombreCompleto?></t>
-          <input type="submit" value="Cambiar Contrase&#241a">
-        </form>
-        <a href="index.php">Log Out</a>
-      </div>
-      <div id="cuerpoDiv">
-        <div id="agregarPeliDiv">
-          <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">
-<!--            <input type="text" id="peliculaInt" name="peliculaInt" onkeypress="HandleKeyPress(event)">            <input type="button" value="Agregar" onclick="AgregarPelicula()">-->
-            <input type="text" name="peliculaInt">
-            <input type="submit" value="Agregar">
-          </form>
-          <?php
-            if(!empty($_saveStatus)) {
-              ?>
-              <label><?php echo $_saveStatus?></label>
-              <?php
-            }
-          ?>
-<!--          <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">            <table id="pelisAgregadasTbl">              <tr>                <th>Peliculas</th>              </tr>            </table>            <input type="button" id="GuardarPeliculas" value="Guardar">          </form> -->
-        </div>
-        <div id="pelisVistasDiv">
-          <table id="pelisVistasTbl">
-            <tr>
-              <th>Peliculas Vistas</th>
-            </tr>
+      <div id="headDiv">
+        <div id="headInfDiv">
+          <div id="imgDiv">
+            <img src="img/camareIcon.jpg" alt="Smiley face" height="42" width="42">
+          </div>
+          <div id="labelDiv">
             <?php
-              PeliculasVistas($_GET["usuario"]);
+              $_nombreCompleto = ObtenerNombre($_GET["usuario"]);
             ?>
-          </table>
+            <label><?php echo $_nombreCompleto?></label>
+          </div>
+        </div>
+        <div id="spaceDiv">
+        </div>
+        <div id="headConfDiv">
+          <div id="formDiv">
+            <form action="CambioContrase&#241a.php" method="post">
+              <input type="submit" value="Cambiar Contrase&#241a">
+            </form>
+          </div>
+          <div id="aDiv">
+            <a href="index.php">Log Out</a>
+          </div>
+        </div>
+      </div>
+      <div id="bodyDiv">
+        <div id="agregarPeliDiv">
+          <div id="nombrePeliculaDiv">
+            <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">
+  <!--            <input type="text" id="peliculaInt" name="peliculaInt" onkeypress="HandleKeyPress(event)">            <input type="button"   value="Agregar" onclick="AgregarPelicula()">-->
+              <input type="text" name="peliculaInt">
+              <input type="submit" value="Agregar">
+            </form>
+            <!-- <?php
+              if(!empty($_saveStatus)) {
+                ?>
+                <label><?php echo $_saveStatus?></label>
+                <?php
+              }
+            ?> -->
+  <!--          <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">            <table id="pelisAgregadasTbl">              <tr>                <th>Peliculas</th>              </tr>            </table>            <input type="button" id="GuardarPeliculas" value="Guardar">          </form> -->
+          </div>
+          <div id="pelisVistasDiv" class="datagrid">
+            <table id="pelisVistasTbl">
+              <thead>
+                <tr>
+                  <th>Peliculas Vistas</th>
+                </tr>
+              </thead>
+              <?php
+                PeliculasVistas($_GET["usuario"]);
+              ?>
+            </table>
+          </div>
         </div>
         <div id="paresUsuariosDiv">
-          <?php
-            ArmarTablaPeliculasVistas();
-          ?>	
+          <div class="datagrid">
+            <?php
+              ArmarTablaPeliculasVistas();
+            ?>	
+          </div>
         </div>
-      <div>
-      <div id="pieDiv">
       </div>
     </div>
   </body>
 </html>
+
