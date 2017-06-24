@@ -1,0 +1,126 @@
+body {
+  /* Ubicación de la imagen */
+  background-image: url(../img/hqdefault.jpg);
+  /* Nos aseguramos que la imagen de fondo este centrada vertical y horizontalmente en todo momento */
+  /*background-position: center center;*/
+  /* La imagen de fondo no se repite */
+  background-repeat: repeat;
+  /* La imagen de fondo está fija en el viewport, de modo que no se mueva cuando la altura del contenido supere la altura de la imagen. */
+  background-attachment: fixed;
+  /* La imagen de fondo se reescala cuando se cambia el ancho de ventana del navegador */
+  /*background-size: cover;*/
+  /* Fijamos un color de fondo para que se muestre mientras se está cargando la imagen de fondo o si hay problemas para cargarla  */
+  background-color: #464646;
+}
+
+/*input[type=text]:focus{
+ hover: blue;
+}*/
+
+div {
+  border-radius: 5px;
+}
+
+label { 
+  margin-top: 15px;
+  font-size: 14px; 
+  font-family: monospace; 
+} 
+
+input {
+  font-size: 14px; 
+  font-family: monospace;
+  border-radius: 5px; 
+  border: 0px;  
+  height: 30px; 
+  font-weight: bold; 
+}
+
+/*input {
+    border-radius: 5px; 
+    border: 0px; 
+    /*width: 100%; */
+  /*  height: 30px; 
+    font-weight: bold; 
+}*/
+
+input[type=button], input[type=submit]{
+  cursor: pointer;
+}
+
+/*table {
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+tr {
+  background:green;
+  border-radius: 5px;
+  border: 0px;
+}
+
+th {
+  border-radius: 5px 5px 0px 0px;
+  background: #ccc;
+}*/
+
+
+.datagrid table { 
+  border-collapse: collapse; 
+  text-align: left; 
+  width: 100%; } 
+
+.datagrid {
+  font: normal 12px/150% Arial, Helvetica, sans-serif; 
+  background: #fff; 
+  overflow: hidden; 
+  border: 1px solid #8C8C8C; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px
+}
+
+.datagrid table td, .datagrid table th {
+  padding: 8px 10px;
+}
+
+.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #EAEAEC), color-stop(1, #EAEAEC) );background:-moz-linear-gradient( center top, #EAEAEC 5%, #EAEAEC 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#EAEAEC', endColorstr='#EAEAEC');background-color:#EAEAEC; color:#534F50; font-size: 15px; font-weight: bold; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #9B9C97; border-left: 1px solid #DBDBDB;font-size: 12px;border-bottom: 1px solid #DBDBDB;font-weight: normal; }.datagrid table tbody .alt td { background: #EEEEEE; color: #9B9C97; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }
+
+
+.btnSubmit {
+  border: none;
+  background: green;
+  color: white;
+}
+
+.btnCancel {
+  border: none;
+  background: red;
+  color: white;
+}
+
+/*input[type=text], input[type=password]  { 
+    border-radius: 5px; 
+    border: 0px; 
+    /*width: 100%; */
+    /*height: 30px; 
+    font-weight: bold; 
+}*/
+
+
+.DefaultTextField{
+ border-color: gray;
+}
+
+.CorrectTextField{
+ border-color: green;
+}		
+
+.ErrorTextField{
+ border-color: red;
+}
+
+.ErrorText {
+  color: red;
+}
+
