@@ -44,6 +44,46 @@
     return !empty($_registrado);
   }
 
+  function CambiarContraseña($usuario, $newPass) {
+    //Creo una instancia a la base de datos.
+    $conexion = InstanciarConexion();
+
+    //Encriptación de la password.
+    $passEncripted = Encriptar($newPass);
+
+    //Creo el texto del insert.
+    $queryInsert = "UPDATE PERSONA SET CLAVE = '$passEncripted' WHERE USUARIO = '$usuario'";
+
+    //Ejecuto la query.
+    $result = pg_query($queryInsert) or die('No se ha podido realizar el registro: ' . pg_last_error());
+
+    //Cierro la Conexion.
+    pg_close($conexion);
+  }
+
+  function ObtenerPassDe($usuario) {
+    //Creo una instancia a la base de datos.
+    $conexion = InstanciarConexion();
+
+    //Encriptación de la password.
+    $passEncripted = Encriptar($pass);
+
+    //Creo el texto del insert.
+    $queryInsert = "SELECT CLAVE FROM PERSONA WHERE USUARIO = '$usuario'";
+
+    //Ejecuto la query.
+    $result = pg_query($queryInsert) or die('No se ha podido realizar el registro: ' . pg_last_error());
+
+    while($row = pg_fetch_row($result)) {
+      $_pass = $row[0];
+    }
+
+    //Cierro la Conexion.
+    pg_close($conexion);
+
+    return !empty($_pass);
+  }
+
   function ObtenerNombre($usuario) {
     //Creo una instancia a la base de datos.
     $conexion = InstanciarConexion() or die('Imposible instanciar.');
@@ -69,7 +109,7 @@
     $conexion = InstanciarConexion() or die('Imposible instanciar.');
 
     //Text de query.
-    $queryInsertPeli = "INSERT INTO PELIS_QUE_VIO(PELICULA_ID, USUARIO) VALUES('$pelicula', '$usuario');";
+    $queryInsertPeli = "INSERT INTO PELIS_QUE_VIO(PELICULA_ID, USUARIO) VALUES('$pelicula', '$usuario')";
 
     //Ejecuto la query.
     $result = pg_query($queryInsertPeli) or die('No se ha podido registrar la pelicula: ' . pg_last_error());
@@ -77,7 +117,7 @@
     //Cierro la Conexion.
     pg_close($conexion);
 
-    return "TRUE";
+//    return "TRUE";
   }
 
   function ArmarTabla($usuario) {

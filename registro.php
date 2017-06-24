@@ -1,18 +1,18 @@
 <html>
   <head>
-    <?php
+    <!--<?php
       include 'phpFunctions/DBManage.php';
       include 'phpFunctions/registroFunc.php';
-    ?>
+    ?>-->
     <link rel="stylesheet" type="text/css" href="css/defaultStyle.css"></script>
     <link rel="stylesheet" type="text/css" href="css/registroStyle.css"></script>
 
-    <script type="text/javascript" src="js/functions.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     
   </head>
   <body>
     <div id="bodyDiv">
-      <?php
+      <!-- <?php
       $_registrar = TRUE;
       if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -42,7 +42,8 @@
         }
       }
       ?>
-      <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">
+      <form id="_Registro" method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">  -->
+      <form id="_Registro" method="post">
         <label>* Nombres: </label>
         <input type="text" id="nombreInp" name="name">
         <span class="error"></span>
@@ -63,7 +64,7 @@
         <input type="password" class="DefaultTextField" id="repPassInp" name="repPass" onblur="ControlPassword()">
         <span class="error"></span>
         <br>
-        <span><?php echo $_Error;?></span>
+<!--        <span><?php echo $_Error;?></span>   -->
         <div id="buttons">
           <input type="submit" class="btnSubmit" value="Registrar">
           <input type="button" class="btnCancel" value="Cancelar" onclick="GoBack()">
@@ -71,5 +72,7 @@
       </form>
     </div>
   </body>
+  <script type="text/javascript" src="js/functions.js"></script>
+  <script type="text/javascript" src="js/registro.js"></script>
 </html>
 

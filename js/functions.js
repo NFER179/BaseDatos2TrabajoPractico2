@@ -1,5 +1,5 @@
 //Funcion para corraborrar contraseña.
-function ControlPassword(tag1, tag2){
+/*function ControlPassword(tag1, tag2){
 	//document.getElementById("nombreInp").value = document.getElementById("passInp").value;
 	//var x = document.getElementById("passInp").value;
 	//var y = document.getElementById("repPassInp");
@@ -9,12 +9,12 @@ function ControlPassword(tag1, tag2){
 
         if ( x.value == y.value ) {
 		/*y.classList.remove("DefaultTextField");*/
-		y.className="CorrectTextField";
+/*		y.className="CorrectTextField";
 	}
 	else {
 		/*y.classList.remove("DefaultTextField");*/
                 //y.addEventListener("onkeydown", ControlarPass(x.value, y));
-                y.className="ErrorTextField";
+/*                y.className="ErrorTextField";
 	}
 }
 
@@ -29,8 +29,9 @@ alert("dd");
 		} 
 	}
 }
-
+*/
 //Funcion para retornar a la pagina anterior;
 function GoBack() {
 	window.history.back();
 }
+

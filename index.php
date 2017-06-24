@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="css/defaultStyle.css"></script>
     <link rel="stylesheet" type="text/css" href="css/indexStyle.css"></script>
 
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
   </head>
   <body>
     <div id="principalDiv">		
@@ -20,11 +20,11 @@
       <div id="bodyDiv">
         <div id="leyenda">
           <p> 
-            peliculas para agregar las peliculas que uno vio y para ver los pares de usuario que vieron la misma peliculas. 
+            Página para agregar las peliculas que uno vio y para ver los pares de usuario que vieron la misma peliculas. 
           </p> 
         </div> 
         <div id="logDiv">     
-          <?php
+          <!--<?php
           $_mensajeError = "";
           $_usuario = $_POST["usuario"];
           $_pass = $_POST["pass"];
@@ -42,19 +42,22 @@
             }
           }
           ?>
-          <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]); ?>">
+          <form method="post" id="_LogIn" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]); ?>"> -->
+          <form method="post" id="_LogIn" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]); ?>">
             <br>
-            <t>Usuario: </t>
-            <input type="text" name="usuario" maxlength="20" placeholder="Usuario"/>
+            <label>Usuario: </label>
+            <input id="_usuarioLabel" type="text" name="usuario" maxlength="20" placeholder="Usuario"/>
             <br>
-            <t>Password: </t>
-            <input type="password" name="pass" maxlength="20" placeholder="Password"/>
-            <input type="submit" class="btnSubmit" value="Ingresar">
+            <label>Password: </label>
+            <input id="_passLabel" type="password" name="pass" maxlength="20" placeholder="Password"/>
+            <input type="submit" id="_btnIngresar" class="btnSubmit" value="Ingresar">
           </form>
           <label class="ErrorText"><?php echo $_mensajeError;?></label>
         </div>
       </div>
     <div>
   </body>
+  <script type="text/javascript" src="js/functions.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </html>
 

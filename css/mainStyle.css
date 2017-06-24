@@ -1,0 +1,185 @@
+#headDiv { 
+  position: relative;
+  margin: 0px 0px 10px 0px;
+  background: black; 
+  color: white; 
+  border-radius: 5px; 
+  height: 50px; 
+  width: 100%; 
+  min-width: 620px;
+} 
+
+#headInfDiv{
+  float:left;
+  position: relative; 
+  width: 30%;
+  min-width: 350px;
+}
+
+#imgDiv{
+  float: left;
+  position: relative;
+}
+
+#imgDiv img{
+  position: relative;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+#labelDiv {
+  float: left;
+  position: relative;
+  margin: 30px 0px 0px 15px;
+}
+
+#labelDiv label {
+  position: relative;
+}
+
+/*#spaceDiv {
+  float: left;
+  position: relative;
+  background: gray;
+  width: 50%;
+  height: 10px;
+}*/
+
+#headConfDiv {
+/*  background: green;
+  height: 10px;*/
+  float: right;
+  position: relative; 
+  width: 20%;
+  min-width: 260px;
+}
+
+#formDiv{
+  float: left;
+  position: relative;
+  margin: 10px 0;
+}
+
+#formDiv form input{
+  background: orange;
+  color: white;
+}
+
+#aDiv{
+  float: right;
+  position: relative;
+  margin: 15px;
+}
+
+#aDiv a{
+  color: white;
+}
+
+#bodyDiv {
+  position: relative; 
+  width: 100%;
+  min-width: 620px;
+  height: auto;
+}
+
+#agregarPeliDiv{
+  float: left;
+  background: #ccc;
+  position: relative;
+  height: auto;
+  margin: 8px 0px;
+  width: 49%;
+  min-width: 300px;
+}
+
+#nombrePeliculaDiv {
+  position: relative;
+  margin: auto;
+  width: 98%;
+}
+
+#nombrePeliculaDiv input[type=text] {
+  border-radius: 5px 0px 0px 5px;
+  width: 80%;
+  min-width: 120px;
+  margin: 8px 0px;
+  border: 1px solid gray;
+  padding: 0px;
+}
+
+#nombrePeliculaDiv input[type=submit] {
+  width: 20%;
+  border-radius: 0px 5px 5px 0px;
+  margin: 8px 0px 0px -5px;
+  border: 1px solid gray;
+  padding: 0px;
+  background: #6897bb;
+  color: white;
+}
+
+#pelisVistasDiv {
+  position: relative;
+  margin: auto;
+  margin-bottom: 8px;
+  width: 98%;
+}
+
+#paresUsuariosDiv{
+  float: right;
+  background: #ccc;
+  position: relative;
+  height: auto;
+  margin: 8px 0px 0px 1px;
+  width: 49%;
+  min-width: 300px;
+}
+
+#paresUsuariosDiv div {
+  position: relative;
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 98%;
+}
+/*#headDiv img{
+  position: relative;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+#headDiv label {
+  position: absolute;
+  margin: 50% 5px 0px 0px;
+}
+
+#headDiv input{
+  float: right;
+  margin: 4px;
+}*/
+
+/*#headDiv a { 
+  cursor: pointer; 
+  /*position: absolute; */
+  /*float: right;
+  top: 25%; 
+  right: 5%; 
+  color: while; 
+  font-weight: bold; 
+}*/
+/*
+#bodyDiv div {
+  background: #ccc;
+  float:left;
+  width:32%;
+  margin: 8px 0px 1% 1%;
+}
+
+#pelisAgregadasTbl {
+  width:100%;
+}
+
+#pelisAgregadasTbl th{
+  color: blue;
+  width:100%;
+}
+*/

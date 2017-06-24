@@ -1,5 +1,5 @@
 <html>
-  <?php
+  <!--<?php
     include 'phpFunctions/DBManage.php';
     include 'phpFunctions/MainFunc.php';
     
@@ -8,13 +8,13 @@
         $_saveStatus = GuardarPeliculasVistas($_GET["usuario"], $_POST["peliculaInt"]);
       }
     }
-  ?>
+  ?>-->
   <head>
     <link rel="stylesheet" type="text/css" href="css/defaultStyle.css"></script>
     <link rel="stylesheet" type="text/css" href="css/mainStyle.css"></script>
 
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
   </head>
   <body>
     <div id="principalDiv">
@@ -25,7 +25,9 @@
           </div>
           <div id="labelDiv">
             <?php
-              $_nombreCompleto = ObtenerNombre($_GET["usuario"]);
+              //$_nombreCompleto = ObtenerNombre($_GET["usuario"]);
+              session_start();
+              $_nombreCompleto = ObtenerNombre($_SESSION["user"]) . " (" . $_SESSION["user"] . ")";
             ?>
             <label><?php echo $_nombreCompleto?></label>
           </div>
@@ -39,17 +41,18 @@
             </form>
           </div>
           <div id="aDiv">
-            <a href="index.php">Log Out</a>
+            <a id="_LogOut" href="index.php">Log Out</a>
           </div>
         </div>
       </div>
       <div id="bodyDiv">
         <div id="agregarPeliDiv">
           <div id="nombrePeliculaDiv">
-            <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">
+<!--            <form method="post" action="<?php echo htmlspecialchars($_SEVER["PHP_SELF"]);?>">  -->
   <!--            <input type="text" id="peliculaInt" name="peliculaInt" onkeypress="HandleKeyPress(event)">            <input type="button"   value="Agregar" onclick="AgregarPelicula()">-->
-              <input type="text" name="peliculaInt">
-              <input type="submit" value="Agregar">
+            <form method="post" id="_CargarPelicula">
+              <input type="text" id="_pelicula" name="peliculaInt">
+              <input type="submit" value="Agregar" onclick="AgregarPelicula()">
             </form>
             <!-- <?php
               if(!empty($_saveStatus)) {
@@ -67,9 +70,12 @@
                   <th>Peliculas Vistas</th>
                 </tr>
               </thead>
-              <?php
-                PeliculasVistas($_GET["usuario"]);
-              ?>
+              <tbody>
+                <?php
+                  /*PeliculasVistas($_GET["usuario"]);*/
+                  PeliculasVistas($_SESSION["user"]);
+                ?>
+              </tbody>
             </table>
           </div>
         </div>
@@ -83,5 +89,7 @@
       </div>
     </div>
   </body>
+  <script type="text/javascript" src="js/functions.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </html>
 

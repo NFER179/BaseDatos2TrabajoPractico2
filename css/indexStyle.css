@@ -1,0 +1,66 @@
+#headDiv { 
+  position: relative; 
+  float: rigth; 
+  background: black; 
+  color: white; 
+  border-radius: 5px; 
+  height: 50px; 
+  width: 100%; 
+} 
+
+#headDiv img{
+  position: absolute;
+  border-radius: 5px;
+  margin: 4px;
+}
+ 
+#headDiv a { 
+  cursor: pointer; 
+  position: absolute; 
+  top: 25%; 
+  right: 5%; 
+  color: while; 
+  font-weight: bold; 
+} 
+ 
+ 
+#bodyDiv { 
+  position: relative; 
+  margin-top: 10px; 
+} 
+ 
+ 
+#leyenda { 
+  background: white;
+  opacity: 0.9;
+  float: left; 
+  width: 50%;
+  padding: 20px; 
+} 
+ 
+ 
+#logDiv { 
+  float: right; 
+  background: #ccc; 
+  margin: auto; 
+  padding: 20px; 
+  height: 200px; 
+  width: 40%; 
+  border-radius: 5px; 
+}
+ 
+#logDiv input[type=text], input[type=password] {
+  margin: 8px 0px;
+  width: 100%;
+}
+
+#logDiv input[type=submit] {
+  float: right;
+  position: relative;
+  padding: 0px;
+  border: 0px;
+  margin: 8px 0px;
+  right: 0px;
+  width: 44%;
+  height: 40px;
+}
